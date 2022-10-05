@@ -12,11 +12,11 @@ interface Member {
 interface Dinner {
     member: Member[];
     menu: string[];
-    shuffle(array: Member[]): Member[];
+    shuffle(array: any[]): any[];
     organize(array: Member[]): void;
 }
 
-const dinner = {
+const dinner: Dinner = {
     member: [
         {
             name: "권세훈",
@@ -45,7 +45,7 @@ const dinner = {
 
         array = this.shuffle(array);    //shuffle 한 멤버array 받아오기
         dinnerMember[0] = array[0];
-        dinnerMember[1] = array[array.length-1];     //shuffle한 array 의 맨 앞과 끝 두명 매칭
+        dinnerMember[1] = array[array.length - 1];     //shuffle한 array 의 맨 앞과 끝 두명 매칭
         //console.log(array.length);            //array.length : 배열 원소 개수 반환
         this.menu = this.shuffle(this.menu);    //shuffle 한 메뉴array 받아오기
         //맨 앞의 메뉴로 선정
